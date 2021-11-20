@@ -4,7 +4,7 @@ import styles from './Layout.module.css';
 import Link from 'next/link';
 import { Brightness6Rounded } from '@material-ui/icons';
 
-const Layout = ({ children, title = 'World Ranks' }) => {
+const Layout = ({ children, title = 'Diverse Earth' }) => {
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
