@@ -78,7 +78,9 @@ const Country = ({ country }) => {
             <div className={styles.details_panel_row}>
               <div className={styles.details_panel_label}>Currencies</div>
               <div className={styles.details_panel_value}>
-                {country.currencies.map(({ name }) => name).join(', ')}
+                {country.currencies
+                  ? country.currencies.map(({ name }) => name).join(', ')
+                  : 'NA'}
               </div>
             </div>
 
@@ -127,19 +129,23 @@ const Country = ({ country }) => {
 export default Country;
 
 export const getStaticPaths = async () => {
-  const res = await axios.get('https://restcountries.com/v2/all');
-  const countries = await res.data;
+  try {
+    const res = await axios.get('https://restcountries.com/v2/all');
+    const countries = await res.data;
 
-  const paths = countries.map(country => ({
-    params: {
-      id: country.alpha3Code,
-    },
-  }));
+    const paths = countries.map(country => ({
+      params: {
+        id: country.alpha3Code,
+      },
+    }));
 
-  return {
-    paths,
-    fallback: false,
-  };
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export const getStaticProps = async ({ params }) => {
