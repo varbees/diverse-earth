@@ -1,0 +1,124 @@
+.overview_panel img {
+  width : 100%;
+  border-radius: 4px;
+  height: 314px;
+  object-fit: contain;
+}
+
+.overview_panel {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--background-color-light);
+}
+
+.overview_name {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.overview_region {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+.overview_numdata {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: center ;
+}
+
+.overview_label {
+  font-size: 14px;
+  color: var(--text-secondary-color);
+}
+
+.details_panel {
+  background-color: var(--background-color-light);
+  box-shadow: var(--box-shadow);
+  border-radius: 12px;
+}
+
+.details_panel_heading {
+  padding: 20px;
+  padding-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+.details_panel_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.details_panel_label {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+}
+
+.details_panel_borders img {
+  width: 100%;
+  height: 214px;
+  object-fit: contain;
+}
+
+.details_panel_borders {
+  padding: 20px;
+}
+
+.details_panel_borders_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 24px;
+}
+
+.details_panel_borders_country {
+  border-radius: 4px;
+  text-align: center;
+}
+
+.details_panel_borders_label {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.overview_container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+@media screen and (min-width: 720px) {
+  .overview_container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  .overview_container_left{
+    grid-column: 1/span 4;
+  }
+
+  .overview_container_right {
+    margin-top: 0;
+    grid-column: 5/span 8;
+  }
+
+  .details_panel_heading {
+    text-align: left;
+  }
+
+  .details_panel_borders_label {
+    text-align: left;
+  }
+  
+  
+}
