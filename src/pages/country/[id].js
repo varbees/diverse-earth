@@ -5,7 +5,7 @@ import styles from './Country.module.css';
 
 const getCountry = async id => {
   try {
-    const res = await axios.get(`http://restcountries.com/v2/alpha/${id}`);
+    const res = await axios.get(`https://restcountries.com/v2/alpha/${id}`);
     const country = await res.data;
     return country;
   } catch (error) {
