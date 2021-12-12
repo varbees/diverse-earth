@@ -4,7 +4,7 @@ import styles from './SearchInput.module.css';
 function SearchInput({ ...rest }) {
   return (
     <div className={styles.wrapper}>
-      <SearchRounded color='inherit' />
+      <SearchRounded color='inherit' fontSize='small' />
       <input className={styles.input} {...rest} />
     </div>
   );
